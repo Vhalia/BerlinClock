@@ -14,4 +14,13 @@ class BerlinClockTest extends TestCase
 
         $this->assertEquals($expectedTable, $actualTable);
     }
+
+    public function testTranslateToBerlinClockGiven1minShouldReturnFirstLightOn(){
+        $berlinClock = new BerlinClock();
+        $expectedTable = ["y"];
+        $actualTable = $berlinClock->translateToBerlinClockTime(1);
+
+        $this->assertEquals($expectedTable, $actualTable);
+    }
+
 }
