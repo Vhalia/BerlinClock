@@ -29,6 +29,14 @@ class BerlinClockTest extends TestCase
         $this->assertEquals($expectedTable, $actualTable);
     }
 
+    public function testTranslateToBerlinClock_Given2minShouldReturn2LightsOn() {
+        $expectedTable = ["y", "y"];
+
+        $actualTable = $this->berlinClock->translateToBerlinClockTime(2);
+
+        $this->assertEquals($expectedTable, $actualTable);
+    }
+
 
 
 }
