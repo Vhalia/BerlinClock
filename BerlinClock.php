@@ -12,8 +12,10 @@ class BerlinClock
 
     public function translatePerOneMin(int $min) {
         $per1min = [" ", " ", " ", " "];
-        if ($min === 1) $per1min = ["y", " ", " ", " "];
-        if ($min === 2) $per1min =  ["y", "y", " ", " "];
+        $modulo = $min%5;
+        for($i=0; $i<$modulo; $i++){
+            $per1min[$i]= "y";
+        }
         return $per1min;
     }
 
