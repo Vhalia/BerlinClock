@@ -19,7 +19,7 @@ class BerlinClock
 
     public function translatePerFiveMin(int $min) {
         $per5min = [" "];
-        if ($min === 5) {
+        if ($min === 5 || $min === 6) {
             $per5min = ["y"];
         }
         return $per5min;

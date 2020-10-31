@@ -38,12 +38,23 @@ class BerlinClockTest extends TestCase
     }
 
 
+
+
     public function testTranslatePerFiveMin_Given5minShouldReturn1littleYellowLightOn() {
         $expectedTable = ["y"];
 
         $actualTable = $this->berlinClock->translatePerFiveMin(5);
 
         $this->assertEquals($expectedTable, $actualTable);
+    }
+
+    public function testTranslatePerFiveMin_Given6minShouldReturn1LittleYellowLightOn(){
+        $expectedTable = ["y"];
+
+        $actualTable = $this->berlinClock->translatePerFiveMin(6);
+
+        $this->assertEquals($expectedTable, $actualTable);
+
     }
 
 
