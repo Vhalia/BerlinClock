@@ -7,7 +7,8 @@ class BerlinClock
         $per1min = $this->translatePerOneMin($min);
         $per5min = $this->translatePerFiveMin($min);
         $per1h = $this->translatePerOneHour($hour);
-        $berlinClock = [$per1h, $per5min, $per1min];
+        $per5h = $this->translatePerFiveHour($hour);
+        $berlinClock = [$per5h, $per1h, $per5min, $per1min];
         return $berlinClock;
     }
 
