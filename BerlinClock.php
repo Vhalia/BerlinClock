@@ -24,6 +24,7 @@ class BerlinClock
         if ($min === 5 || $min === 6) {
             $per5min = ["y"];
         }
+        if ($min === 10) $per5min = ["y", "y"];
         return $per5min;
     }
 }
