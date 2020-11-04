@@ -38,4 +38,8 @@ class BerlinClock
         }
         return $per1hour;
     }
+
+    public function translatePerFiveHour(int $hour) {
+        if ($hour === 5) return ["r"];
+    }
 }
