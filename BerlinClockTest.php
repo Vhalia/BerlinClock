@@ -131,7 +131,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerFiveHour_Given5hShouldReturn1HighRedLightOn() {
-        $expectedTable = ["r"];
+        $expectedTable = ["r", " ", " ", " "];
 
         $actualTable = $this->berlinClock->translatePerFiveHour(5);
 
@@ -139,7 +139,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerFiveHour_Given6hShouldReturn1HighRedLightOn() {
-        $expectedTable = ["r"];
+        $expectedTable = ["r", " ", " ", " "];
 
         $actualTable = $this->berlinClock->translatePerFiveHour(6);
 
@@ -155,7 +155,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerFiveHour_Given10hShouldReturn2HighRedLightsOn() {
-        $expectedTable = ["r", "r"];
+        $expectedTable = ["r", "r", " ", " "];
 
         $actualTable = $this->berlinClock->translatePerFiveHour(10);
 

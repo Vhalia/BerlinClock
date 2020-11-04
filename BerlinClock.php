@@ -42,9 +42,11 @@ class BerlinClock
     }
 
     public function translatePerFiveHour(int $hour) {
-        if ($hour === 5 || $hour === 6) return ["r"];
-        if ($hour === 10) return ["r", "r"];
-        if ($hour === 20) return ["r", "r", "r", "r"];
-
+        $per5h = [" ", " ", " ", " "];
+        $test = floor($hour/5);
+        for($i =0; $i< $test; $i++){
+            $per5h[$i] = "r";
+        }
+        return $per5h;
     }
 }
