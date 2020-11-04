@@ -228,4 +228,8 @@ class BerlinClockTest extends TestCase
         $this->assertEquals($expectedTable, $actualTable);
     }
 
+    public function testTranslateToBerlinClock_GivenNothingShouldReturnNowInBerlinClockTime() {
+        $this->berlinClock->translateToBerlinClockTime();
+    }
+
 }

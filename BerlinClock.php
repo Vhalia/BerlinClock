@@ -4,11 +4,16 @@
 class BerlinClock
 {
     /**
-     * @param DateTime $date hh:mm:ss
+     * @param DateTime $date H:i:s (optional)
      * @return 2d array of lights
      */
-    public function translateToBerlinClockTime(DateTime $date) {
-        $dateTime = $date->format("H:i:s");
+    public function translateToBerlinClockTime(DateTime $date = null) {
+        if ($date == null) {
+            date_default_timezone_set("Europe/Brussels");
+            $dateTime = date("H:i:s");
+        }else {
+            $dateTime = $date->format("H:i:s");
+        }
         $hour = substr($dateTime, 0, 2);
         $min = substr($dateTime, 3, 2);
         $sec = substr($dateTime, 6, 2);
