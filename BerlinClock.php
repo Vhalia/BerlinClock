@@ -32,5 +32,6 @@ class BerlinClock
 
     public function translatePerOneHour(int $hour){
         if($hour === 1) return ["r"];
+        if($hour === 2) return ["r", "r"];
     }
 }
