@@ -41,7 +41,7 @@ class BerlinClockTest extends TestCase
 
 
     public function testTranslatePerFiveMin_Given5minShouldReturn1littleYellowLightOn() {
-        $expectedTable = ["y", " ", " ", " ", " ", " "];
+        $expectedTable = ["y", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "];
 
         $actualTable = $this->berlinClock->translatePerFiveMin(5);
 
@@ -49,7 +49,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerFiveMin_Given6minShouldReturn1LittleYellowLightOn(){
-        $expectedTable = ["y", " ", " ", " ", " ", " "];
+        $expectedTable = ["y", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "];
 
         $actualTable = $this->berlinClock->translatePerFiveMin(6);
 
@@ -67,7 +67,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerFiveMin_Given10minShouldReturn2LittleYellowLightsOn() {
-        $expectedTable = ["y", "y", " ", " ", " ", " "];
+        $expectedTable = ["y", "y", " ", " ", " ", " ", " ", " ", " ", " ", " "];
 
         $actualTable = $this->berlinClock->translatePerFiveMin(10);
 
@@ -75,7 +75,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerFiveMin_Given15minShouldReturn2LittleYellowAnd1littleRedLightsOn() {
-        $expectedTable = ["y", "y", "r", " ", " ", " "];
+        $expectedTable = ["y", "y", "r", " ", " ", " ", " ", " ", " ", " ", " "];
 
         $actualTable = $this->berlinClock->translatePerFiveMin(15);
 
@@ -83,9 +83,17 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerFiveMin_Given30minShouldReturn4LittleYellowAnd2LittleRedLightsOn() {
-        $expectedTable = ["y", "y", "r", "y", "y", "r"];
+        $expectedTable = ["y", "y", "r", "y", "y", "r", " ", " ", " ", " ", " "];
 
         $actualTable = $this->berlinClock->translatePerFiveMin(30);
+
+        $this->assertEquals($expectedTable, $actualTable);
+    }
+
+    public function testTranslatePerFiveMin_Given50minShouldReturn8LittleYellowAnd3LittleRedLightsOn(){
+        $expectedTable = ["y", "y", "r", "y", "y", "r", "y", "y", "r", "y", "y"];
+
+        $actualTable = $this->berlinClock->translatePerFiveMin(55);
 
         $this->assertEquals($expectedTable, $actualTable);
     }

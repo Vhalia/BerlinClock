@@ -20,7 +20,7 @@ class BerlinClock
     }
 
     public function translatePerFiveMin(int $min) {
-        $per5min = [" ", " ", " ", " ", " ", " "];
+        $per5min = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "];
         $test = floor($min / 5);
         for($i = 0; $i < $test;$i++) {
             if ($i%3 == 2) $per5min[$i] = "r";
