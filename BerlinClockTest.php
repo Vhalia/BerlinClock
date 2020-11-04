@@ -107,7 +107,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePer1hour_Given1hShouldReturn1LowRedLightOn(){
-        $expectedTable = ["r"];
+        $expectedTable = ["r", " ", " ", " "];
 
         $actualTable = $this->berlinClock->translatePerOneHour(1);
 
@@ -115,7 +115,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePer1hour_Given2hShouldReturn2LowRedLightsOn() {
-        $expectedTable = ["r", "r"];
+        $expectedTable = ["r", "r", " ", " "];
 
         $actualTable = $this->berlinClock->translatePerOneHour(2);
 

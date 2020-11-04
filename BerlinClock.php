@@ -30,9 +30,12 @@ class BerlinClock
         return $per5min;
     }
 
-    public function translatePerOneHour(int $hour){
-        if($hour === 1) return ["r"];
-        if($hour === 2) return ["r", "r"];
-        if($hour === 4) return ["r", "r", "r", "r"];
+    public function translatePerOneHour(int $hour)
+    {
+        $per1hour = [" ", " ", " ", " "];
+        for ($i = 0; $i < $hour; $i++) {
+            $per1hour[$i] = "r";
+        }
+        return $per1hour;
     }
 }
