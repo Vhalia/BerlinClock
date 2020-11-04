@@ -20,13 +20,12 @@ class BerlinClock
     }
 
     public function translatePerFiveMin(int $min) {
-        $per5min = [" "];
-        if ($min === 5 || $min === 6) {
-            $per5min = ["y"];
+        $per5min = [" ", " ", " ", " ", " ", " "];
+        $test = floor($min / 5);
+        for($i = 0; $i < $test;$i++) {
+            if ($i%3 == 2) $per5min[$i] = "r";
+            else $per5min[$i] = "y";
         }
-        if ($min === 10) $per5min = ["y", "y"];
-        if ($min === 15) $per5min = ["y", "y", "r"];
-        if ($min === 30) $per5min = ["y", "y", "r", "y", "y", "r"];
         return $per5min;
     }
 }
