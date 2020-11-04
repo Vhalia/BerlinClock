@@ -51,7 +51,7 @@ class BerlinClock
     }
 
     public function translateSeconds(int $sec){
-        if($sec === 1 || $sec === 3) return [" "];
-        if($sec === 2) return ["r"];
+        if($sec%2 != 0) return [" "];
+        else return ["r"];
     }
 }
