@@ -43,5 +43,7 @@ class BerlinClock
 
     public function translatePerFiveHour(int $hour) {
         if ($hour === 5 || $hour === 6) return ["r"];
+        if ($hour === 10) return ["r", "r"];
+
     }
 }
