@@ -8,7 +8,6 @@ class BerlinClock
      * @return 2d array of lights
      */
     public function translateToBerlinClockTime(DateTime $date) {
-        var_dump($date->format("H:i:s"));
         $dateTime = $date->format("H:i:s");
         $hour = substr($dateTime, 0, 2);
         $min = substr($dateTime, 3, 2);
@@ -19,7 +18,17 @@ class BerlinClock
         $per5h = $this->translatePerFiveHour($hour);
         $sec = $this->translateSeconds($sec);
         $berlinClock = [$sec, $per5h, $per1h, $per5min, $per1min];
+        $this->displayBerlinClockTime($berlinClock);
         return $berlinClock;
+    }
+
+    public function displayBerlinClockTime($berlinClock) {
+        for($i = 0 ; $i < sizeof($berlinClock); $i++) {
+            print "\n";
+            for($j = 0; $j < sizeof($berlinClock[$i]); $j++) {
+                print ($berlinClock[$i][$j]);
+            }
+        }
     }
 
     public function translatePerOneMin(int $min) {
