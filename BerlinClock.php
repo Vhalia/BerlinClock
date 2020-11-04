@@ -3,7 +3,16 @@
 
 class BerlinClock
 {
-    public function translateToBerlinClockTime(int $min, int $hour, int $sec) {
+    /**
+     * @param DateTime $date hh:mm:ss
+     * @return 2d array of lights
+     */
+    public function translateToBerlinClockTime(DateTime $date) {
+        var_dump($date->format("H:i:s"));
+        $dateTime = $date->format("H:i:s");
+        $hour = substr($dateTime, 0, 2);
+        $min = substr($dateTime, 3, 2);
+        $sec = substr($dateTime, 6, 2);
         $per1min = $this->translatePerOneMin($min);
         $per5min = $this->translatePerFiveMin($min);
         $per1h = $this->translatePerOneHour($hour);

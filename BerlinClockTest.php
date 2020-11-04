@@ -210,7 +210,7 @@ class BerlinClockTest extends TestCase
         $per1min = [" ", " ", " ", " "];
         $expectedTable = [$seconds, $per5h, $per1h, $per5min, $per1min];
 
-        $actualTable = $this->berlinClock->translateToBerlinClockTime(0,0,0);
+        $actualTable = $this->berlinClock->translateToBerlinClockTime(new DateTime("00:00:00"));
 
         $this->assertEquals($expectedTable, $actualTable);
     }
@@ -223,7 +223,7 @@ class BerlinClockTest extends TestCase
         $per1min = ["y", "y", "y", "y"];
         $expectedTable = [$seconds, $per5h, $per1h, $per5min, $per1min];
 
-        $actualTable = $this->berlinClock->translateToBerlinClockTime(59,23,59);
+        $actualTable = $this->berlinClock->translateToBerlinClockTime(new DateTime("23:59:59"));
 
         $this->assertEquals($expectedTable, $actualTable);
     }
