@@ -202,4 +202,17 @@ class BerlinClockTest extends TestCase
         $this->assertEquals($expectedTable, $actualTable);
     }
 
+    public function testTranslateToBerlinClockTime_Given0h0min0sShouldReturnAllLightsOff() {
+        $seconds = ["r "];
+        $per5h = [" ", " ", " ", " "];
+        $per1h = [" ", " ", " ", " "];
+        $per5min = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "];
+        $per1min = [" ", " ", " ", " "];
+        $expectedTable = [$seconds, $per5h, $per1h, $per5min, $per1min];
+
+        $actualTable = $this->berlinClock->translateToBerlinClockTime(0,0,0);
+
+        $this->assertEquals($expectedTable, $actualTable);
+    }
+
 }
