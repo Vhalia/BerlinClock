@@ -186,4 +186,12 @@ class BerlinClockTest extends TestCase
         $this->assertEquals($expectedTable, $actualTable);
     }
 
+    public function testTranslateSeconds_Given2sShouldReturnRedLightOn() {
+        $expectedTable = ["r"];
+
+        $actualTable = $this->berlinClock->translateSeconds(2);
+
+        $this->assertEquals($expectedTable, $actualTable);
+    }
+
 }
