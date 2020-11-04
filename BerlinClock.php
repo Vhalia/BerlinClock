@@ -49,4 +49,8 @@ class BerlinClock
         }
         return $per5h;
     }
+
+    public function translateSeconds(int $sec){
+        if($sec === 1) return [" "];
+    }
 }
