@@ -32,7 +32,7 @@ class BerlinClock
     }
 
     public function translatePerOneMin(int $min) {
-        $per1min = [" ", " ", " ", " "];
+        $per1min = ["O", "O", "O", "O"];
         $modulo = $min%5;
         for($i=0; $i<$modulo; $i++){
             $per1min[$i]= "y";
@@ -41,7 +41,7 @@ class BerlinClock
     }
 
     public function translatePerFiveMin(int $min) {
-        $per5min = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "];
+        $per5min = ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"];
         $test = floor($min / 5);
         for($i = 0; $i < $test;$i++) {
             if ($i%3 == 2) $per5min[$i] = "r";
@@ -52,7 +52,7 @@ class BerlinClock
 
     public function translatePerOneHour(int $hour)
     {
-        $per1h = [" ", " ", " ", " "];
+        $per1h = ["O", "O", "O", "O"];
         $modulo = $hour%5;
         for ($i = 0; $i < $modulo; $i++) {
             $per1h[$i] = "r";
@@ -61,7 +61,7 @@ class BerlinClock
     }
 
     public function translatePerFiveHour(int $hour) {
-        $per5h = [" ", " ", " ", " "];
+        $per5h = ["O", "O", "O", "O"];
         $test = floor($hour/5);
         for($i =0; $i< $test; $i++){
             $per5h[$i] = "r";
@@ -70,7 +70,7 @@ class BerlinClock
     }
 
     public function translateSeconds(int $sec){
-        if($sec%2 != 0) return [" "];
+        if($sec%2 != 0) return ["O"];
         else return ["r"];
     }
 }

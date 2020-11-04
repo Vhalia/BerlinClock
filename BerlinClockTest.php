@@ -14,7 +14,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerOneMin_Given0minShouldReturnLightsOff() {
-        $expectedTable = [" ", " ", " ", " "];
+        $expectedTable = ["O", "O", "O", "O"];
 
         $actualTable = $this->berlinClock->translatePerOneMin(0);
 
@@ -22,7 +22,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerOneMin_Given1minShouldReturnFirstLightOn(){
-        $expectedTable = ["y", " ", " ", " "];
+        $expectedTable = ["y", "O", "O", "O"];
 
         $actualTable = $this->berlinClock->translatePerOneMin(1);
 
@@ -30,7 +30,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerOneMin_Given2minShouldReturn2LightsOn() {
-        $expectedTable = ["y", "y", " ", " "];
+        $expectedTable = ["y", "y", "O", "O"];
 
         $actualTable = $this->berlinClock->translatePerOneMin(2);
 
@@ -41,7 +41,7 @@ class BerlinClockTest extends TestCase
 
 
     public function testTranslatePerFiveMin_Given5minShouldReturn1littleYellowLightOn() {
-        $expectedTable = ["y", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "];
+        $expectedTable = ["y", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"];
 
         $actualTable = $this->berlinClock->translatePerFiveMin(5);
 
@@ -49,7 +49,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerFiveMin_Given6minShouldReturn1LittleYellowLightOn(){
-        $expectedTable = ["y", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "];
+        $expectedTable = ["y", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"];
 
         $actualTable = $this->berlinClock->translatePerFiveMin(6);
 
@@ -58,7 +58,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerOneMin_Given6minShouldReturn1LittleYellowLightOn(){
-        $expectedTable = ["y", " ", " ", " "];
+        $expectedTable = ["y", "O", "O", "O"];
 
         $actualTable = $this->berlinClock->translatePerOneMin(6);
 
@@ -67,7 +67,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerFiveMin_Given10minShouldReturn2LittleYellowLightsOn() {
-        $expectedTable = ["y", "y", " ", " ", " ", " ", " ", " ", " ", " ", " "];
+        $expectedTable = ["y", "y", "O", "O", "O", "O", "O", "O", "O", "O", "O"];
 
         $actualTable = $this->berlinClock->translatePerFiveMin(10);
 
@@ -75,7 +75,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerFiveMin_Given15minShouldReturn2LittleYellowAnd1littleRedLightsOn() {
-        $expectedTable = ["y", "y", "r", " ", " ", " ", " ", " ", " ", " ", " "];
+        $expectedTable = ["y", "y", "r", "O", "O", "O", "O", "O", "O", "O", "O"];
 
         $actualTable = $this->berlinClock->translatePerFiveMin(15);
 
@@ -83,7 +83,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerFiveMin_Given30minShouldReturn4LittleYellowAnd2LittleRedLightsOn() {
-        $expectedTable = ["y", "y", "r", "y", "y", "r", " ", " ", " ", " ", " "];
+        $expectedTable = ["y", "y", "r", "y", "y", "r", "O", "O", "O", "O", "O"];
 
         $actualTable = $this->berlinClock->translatePerFiveMin(30);
 
@@ -107,7 +107,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerOneHour_Given1hShouldReturn1LowRedLightOn(){
-        $expectedTable = ["r", " ", " ", " "];
+        $expectedTable = ["r", "O", "O", "O"];
 
         $actualTable = $this->berlinClock->translatePerOneHour(1);
 
@@ -115,7 +115,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePeOneHour_Given2hShouldReturn2LowRedLightsOn() {
-        $expectedTable = ["r", "r", " ", " "];
+        $expectedTable = ["r", "r", "O", "O"];
 
         $actualTable = $this->berlinClock->translatePerOneHour(2);
 
@@ -131,7 +131,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerFiveHour_Given5hShouldReturn1HighRedLightOn() {
-        $expectedTable = ["r", " ", " ", " "];
+        $expectedTable = ["r", "O", "O", "O"];
 
         $actualTable = $this->berlinClock->translatePerFiveHour(5);
 
@@ -139,7 +139,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerFiveHour_Given6hShouldReturn1HighRedLightOn() {
-        $expectedTable = ["r", " ", " ", " "];
+        $expectedTable = ["r", "O", "O", "O"];
 
         $actualTable = $this->berlinClock->translatePerFiveHour(6);
 
@@ -147,7 +147,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerOneHour_Given6hShouldReturn1LowRedLightOn() {
-        $expectedTable = ["r", " ", " ", " "];
+        $expectedTable = ["r", "O", "O", "O"];
 
         $actualTable = $this->berlinClock->translatePerOneHour(6);
 
@@ -155,7 +155,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslatePerFiveHour_Given10hShouldReturn2HighRedLightsOn() {
-        $expectedTable = ["r", "r", " ", " "];
+        $expectedTable = ["r", "r", "O", "O"];
 
         $actualTable = $this->berlinClock->translatePerFiveHour(10);
 
@@ -179,7 +179,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslateSeconds_Given1sShouldReturnRedLightOff() {
-        $expectedTable = [" "];
+        $expectedTable = ["O"];
 
         $actualTable = $this->berlinClock->translateSeconds(1);
 
@@ -195,7 +195,7 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslateSeconds_Given3sShouldReturnRedLightOn() {
-        $expectedTable = [" "];
+        $expectedTable = ["O"];
 
         $actualTable = $this->berlinClock->translateSeconds(3);
 
@@ -204,10 +204,10 @@ class BerlinClockTest extends TestCase
 
     public function testTranslateToBerlinClockTime_Given0h0min0sShouldReturnAllLightsOffExceptSeconds() {
         $seconds = ["r"];
-        $per5h = [" ", " ", " ", " "];
-        $per1h = [" ", " ", " ", " "];
-        $per5min = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "];
-        $per1min = [" ", " ", " ", " "];
+        $per5h = ["O", "O", "O", "O"];
+        $per1h = ["O", "O", "O", "O"];
+        $per5min = ["O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"];
+        $per1min = ["O", "O", "O", "O"];
         $expectedTable = [$seconds, $per5h, $per1h, $per5min, $per1min];
 
         $actualTable = $this->berlinClock->translateToBerlinClockTime(new DateTime("00:00:00"));
@@ -216,9 +216,9 @@ class BerlinClockTest extends TestCase
     }
 
     public function testTranslateToBerlinClockTime_Given23h59min59sShouldReturn12YellowLightsAnd10RedLightsOn() {
-        $seconds = [" "];
+        $seconds = ["O"];
         $per5h = ["r", "r", "r", "r"];
-        $per1h = ["r", "r", "r", " "];
+        $per1h = ["r", "r", "r", "O"];
         $per5min = ["y", "y", "r", "y", "y", "r", "y", "y", "r", "y", "y"];
         $per1min = ["y", "y", "y", "y"];
         $expectedTable = [$seconds, $per5h, $per1h, $per5min, $per1min];
