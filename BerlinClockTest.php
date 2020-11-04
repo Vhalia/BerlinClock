@@ -170,4 +170,12 @@ class BerlinClockTest extends TestCase
         $this->assertEquals($expectedTable, $actualTable);
     }
 
+    public function testTranslatePerFiveHour_Given23hShouldReturn4HighRedLightsOn() {
+        $expectedTable = ["r", "r", "r", "r"];
+
+        $actualTable = $this->berlinClock->translatePerFiveHour(23);
+
+        $this->assertEquals($expectedTable, $actualTable);
+    }
+
 }
