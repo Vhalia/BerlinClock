@@ -3,10 +3,11 @@
 
 class BerlinClock
 {
-    public function translateToBerlinClockTime(int $min) {
+    public function translateToBerlinClockTime(int $min, int $hour) {
         $per1min = $this->translatePerOneMin($min);
         $per5min = $this->translatePerFiveMin($min);
-        $berlinClock = [$per1min, $per5min];
+        $per1h = $this->translatePerOneHour($hour);
+        $berlinClock = [$per1min, $per5min, $per1h];
         return $berlinClock;
     }
 
@@ -27,5 +28,9 @@ class BerlinClock
             else $per5min[$i] = "y";
         }
         return $per5min;
+    }
+
+    public function translatePerOneHour(int $hour){
+        if($hour === 1) return ["r"];
     }
 }
